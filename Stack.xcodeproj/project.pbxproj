@@ -10,6 +10,7 @@
 		8F8C22091DCF84BD00E7DBD9 /* Stack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8C21FF1DCF84BD00E7DBD9 /* Stack.framework */; };
 		8F8C220E1DCF84BD00E7DBD9 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C220D1DCF84BD00E7DBD9 /* StackTests.swift */; };
 		8F8C22101DCF84BD00E7DBD9 /* Stack.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F8C22021DCF84BD00E7DBD9 /* Stack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8F8C221A1DCF84C700E7DBD9 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C22191DCF84C700E7DBD9 /* Stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		8F8C22081DCF84BD00E7DBD9 /* StackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F8C220D1DCF84BD00E7DBD9 /* StackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackTests.swift; sourceTree = "<group>"; };
 		8F8C220F1DCF84BD00E7DBD9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F8C22191DCF84C700E7DBD9 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				8F8C22021DCF84BD00E7DBD9 /* Stack.h */,
+				8F8C22191DCF84C700E7DBD9 /* Stack.swift */,
 				8F8C22031DCF84BD00E7DBD9 /* Info.plist */,
 			);
 			path = Stack;
@@ -149,6 +152,7 @@
 					8F8C21FE1DCF84BD00E7DBD9 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 9HQR3Y4WE5;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					8F8C22071DCF84BD00E7DBD9 = {
@@ -198,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8C221A1DCF84C700E7DBD9 /* Stack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		8F8C22141DCF84BD00E7DBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
@@ -334,6 +340,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.silverback-it.Stack";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +348,7 @@
 		8F8C22151DCF84BD00E7DBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
@@ -360,6 +368,7 @@
 		8F8C22171DCF84BD00E7DBD9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				INFOPLIST_FILE = StackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +381,7 @@
 		8F8C22181DCF84BD00E7DBD9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 9HQR3Y4WE5;
 				INFOPLIST_FILE = StackTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

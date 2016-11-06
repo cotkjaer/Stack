@@ -9,28 +9,94 @@
 import XCTest
 @testable import Stack
 
-class StackTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+class StackTests: XCTestCase
+{
+    func test_init()
+    {
+        let stack = Stack<String>()
+        
+        XCTAssertEqual(stack.count, 0)
     }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+    func test_init_literal()
+    {
+        var stack = Stack(literalElements: "a", "b", "c")
+        
+        XCTAssertEqual(stack.count, 3)
+        XCTAssertEqual(stack.pop(), "c")
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func test_init_sequence()
+    {
+        var stack = Stack(["a", "b", "c"])
+        
+        XCTAssertEqual(stack.count, 3)
+        XCTAssertEqual(stack.pop(), "c")
+    }
+ 
+    func test_init_repeating()
+    {
+        var stack = Stack(repeating: ["a", "b", "c"], count: 5)
+        
+        XCTAssertEqual(stack.count, 5)
+        XCTAssertEqual(stack.pop(), ["a", "b", "c"])
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func test_push()
+    {
+        var stack = Stack<Int>()
+        
+        XCTAssertEqual(stack.count, 0)
+        
+        stack.push(3)
+
+        XCTAssertEqual(stack.count, 1)
+        
+        XCTAssertEqual(stack.push(4), 4)
+
+        XCTAssertEqual(stack.peek(), 3)
+        
+        XCTAssertNil(stack.push(nil))
+        
+        XCTAssertEqual(stack.count, 1)
+        
+        XCTAssertEqual(stack.peek(), 3)
     }
-    
+
+    func test_pop()
+    {
+        var stack = Stack<Int>()
+        
+        XCTAssertEqual(stack.count, 0)
+        
+        XCTAssertNil(stack.pop())
+        
+        stack.push(3)
+        
+        XCTAssertEqual(stack.count, 1)
+        
+        XCTAssertEqual(stack.pop(), 3)
+    }
+
+    func test_peek()
+    {
+        var stack = Stack<Int>()
+        
+        XCTAssertEqual(stack.count, 0)
+        
+        XCTAssertNil(stack.peek())
+        
+        stack.push(3)
+        
+        XCTAssertEqual(stack.count, 1)
+        
+        XCTAssertEqual(stack.peek(), 3)
+        XCTAssertEqual(stack.peek(), 3)
+        XCTAssertEqual(stack.peek(), 3)
+        
+        stack.pop()
+        
+        XCTAssertNil(stack.peek())
+    }
+
 }
